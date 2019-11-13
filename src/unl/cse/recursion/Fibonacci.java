@@ -1,8 +1,9 @@
 package unl.cse.recursion;
 
 public class Fibonacci {
-	
+	private static int count;
 	public int fibonacci(int n) {
+		count++;
 		if(n == 0) 
 			return 0;
 		else if(n == 1) 
@@ -14,7 +15,7 @@ public class Fibonacci {
 	public static void main(String args[]) {
 		
 		Fibonacci f = new Fibonacci();
-		int result, n = 45;
+		int result, n = 9;
 
 		long start, end;
 		start = System.nanoTime();
@@ -25,6 +26,7 @@ public class Fibonacci {
 		
 		System.out.println("fibonacci("+n+") = "+result);
 		System.out.println("execution time = "+ms+"ms");
+		System.out.println("fibonacci("+n+") calls: " + count);
 		
 	}
 }
